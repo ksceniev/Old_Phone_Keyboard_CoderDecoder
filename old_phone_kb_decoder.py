@@ -31,7 +31,7 @@ for a in listed_nums:
 for a in listed_nums:
     letters = []
     l = [(k, sum(1 for _ in v)) for k, v in itertools.groupby(a)] # list of tuples containing the key pressed and how many times it was pressed.
-    lengh = len(l)
+    
     for t in l: 
         k, v = t[0], t[1]
         letter = decoder_dict[k][v-1]
