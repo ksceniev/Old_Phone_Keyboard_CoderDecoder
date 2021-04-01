@@ -33,3 +33,4 @@ for a in listed_nums:
         for t in l:
             k, v = t[0], t[1]
             letter = decoder_dict[k][v-1]
+            print(letter)
