@@ -27,8 +27,6 @@ with open(main(sys.argv[1:]), 'r+') as fobj:
    lines = [line for line in fobj]
          
 cryp_wds = [cryp_wd.replace('\n', '') for line in lines for cryp_wd in line.split(' ')]
-
-
 listed_nums = [list(cryp_wd) for cryp_wd in cryp_wds]
    
 for a in listed_nums:
@@ -39,5 +37,4 @@ for a in listed_nums:
             a.remove(i)
 
 letters = [decoder_dict[t[0]][t[1]-1] for a in listed_nums for t in [(k, sum(1 for _ in v)) for k, v in itertools.groupby(a)]]
-
 print(''.join(letters))
