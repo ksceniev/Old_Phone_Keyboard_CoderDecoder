@@ -36,6 +36,7 @@ for a in listed_nums:
         except ValueError:
             a.remove(i)
 
+words = []            
 for a in listed_nums:    
     letters = []
     l = [(k, sum(1 for _ in v)) for k, v in itertools.groupby(a)] # list of tuples containing the key pressed and how many times it was pressed.
