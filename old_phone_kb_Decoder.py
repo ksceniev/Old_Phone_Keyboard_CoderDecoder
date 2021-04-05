@@ -36,5 +36,14 @@ for a in listed_nums:
         except ValueError:
             a.remove(i)
 
-letters = [decoder_dict[t[0]][t[1]-1] for a in listed_nums for t in [(k, sum(1 for _ in v)) for k, v in itertools.groupby(a)]]
-print(''.join(letters))
+for a in listed_nums:    
+    letters = []
+    l = [(k, sum(1 for _ in v)) for k, v in itertools.groupby(a)] # list of tuples containing the key pressed and how many times it was pressed.
+    for t in l: 
+        k, v = t[0], t[1]
+        letter = decoder_dict[k][v-1]
+        letters.append(letter)
+    word = ''.join(letters)
+    words.append(word)
+
+print('>> ', ' '.join(words))
